@@ -19,4 +19,3 @@ whole_file = "".join(whole_file)
 experiments = whole_file.split("\n\n\n\n")
 
 # Convert string into a dictionary.
-#TESTIIIIIIING
