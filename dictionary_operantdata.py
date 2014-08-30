@@ -16,6 +16,6 @@ with open("!110909.txt", "r") as f:
 # Make the list as a single string.
 whole_file = "".join(whole_file)
 # Split the string into experiments.
-experiments = whole_file.split("\n\n\n\n")
+experiments = whole_file.split("\n\n")
 
 # Convert string into a dictionary.
