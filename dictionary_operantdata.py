@@ -6,7 +6,7 @@ specific groups in the experiments.
 
 """
 
-# These are the groups the program will look at.10.
+# These are the groups the program will look at.
 groups = ["PR26", "PR15"]
 
 # Open one file. and read all the lines as a list.
