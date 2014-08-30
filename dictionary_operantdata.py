@@ -37,3 +37,22 @@ for experiment in experiments:
 orig_filename = experiments.pop(0)
 
 print("Read", len(data), "experiments from", f.name)
+
+# Now that we have the data we can read things about it.
+#
+# For example, this finds how many of the groups we are interested in.
+for group in groups:
+    counter = 0
+    experiment_h = []
+    print("Finding experiments that match group", group, "...")
+    for i in range(len(data)):
+        # Not all datasets have a group!
+        if data[i].get("Group") != None:
+            if data[i]["Group"] == group:
+                counter += 1
+                experiment_h.append(float(data[i]["H"]))
+    print("...found", counter, group, "groups.")
+    # Print additional info about experiments that match the group.
+    if experiment_h != []:
+        print("The", group, "groups have H values of:")
+        print(experiment_h)
