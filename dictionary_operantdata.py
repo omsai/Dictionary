@@ -15,7 +15,25 @@ with open("!110909.txt", "r") as f:
 
 # Make the list as a single string.
 whole_file = "".join(whole_file)
-# Split the string into experiments.
+# Split the string into a list.
 experiments = whole_file.split("\n\n")
 
-# Convert string into a dictionary.
+data = []
+
+# Convert each string into a dictionary.
+for experiment in experiments:
+    dic = {}
+    for line in experiment.splitlines():
+        key, value = line.split(":", maxsplit=1)
+        # Remove spaces from the key and value strings.
+        key = key.strip()
+        value = value.strip()
+        # Add to the dictionary.
+        dic[key] = value
+    data.append(dic)
+
+# The very first entry is not an experiment, but the original file name.
+# Save the filename and remove it from the experiments list.
+orig_filename = experiments.pop(0)
+
+print("Read", len(data), "experiments from", f.name)
